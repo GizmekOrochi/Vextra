@@ -1,6 +1,6 @@
-<p align="center">
+<div align="center">
   <img src="assets/VEXTRA_Logo.png" alt="Vextra Logo" width="300"/>
-</p>
+</div>
 
 # ⚙️ Vextra — The Simple Project Generator for Developers
 
@@ -15,6 +15,6 @@ complete with directories, Makefiles, and entry points.
 ## 🚀 Quick Start
 
 - Install Vextra  
-- Create a project:  
+- Create a project:
   ```bash
-  vextra create 'name' -java / -c / -c++  
+  vextra create 'name' -java / -c / -c++
