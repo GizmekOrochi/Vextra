@@ -78,8 +78,9 @@ Inheritance diagram for Command:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCommand__inherit__graph.png" border="0" usemap="#aCommand_inherit__map" alt="Inheritance graph"/></div>
 <map name="aCommand_inherit__map" id="aCommand_inherit__map">
-<area shape="rect" title="Abstract base class for all Vextra CLI commands." alt="" coords="52,5,141,32"/>
-<area shape="rect" href="classvextra_1_1CreateCommand.html" title="Implements the vextra create command." alt="" coords="5,80,188,107"/>
+<area shape="rect" title="Abstract base class for all Vextra CLI commands." alt="" coords="107,5,196,32"/>
+<area shape="rect" href="classHelpCommand.html" title="Implements the vextra help command." alt="" coords="5,80,124,107"/>
+<area shape="rect" href="classvextra_1_1CreateCommand.html" title="Implements the vextra create command." alt="" coords="148,80,331,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -87,67 +88,46 @@ Inheritance diagram for Command:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa74faed4563f0e6e08a94ec7d1b2fd3e"><td class="memItemLeft" align="right" valign="top"><a id="aa74faed4563f0e6e08a94ec7d1b2fd3e"></a>
 virtual std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#aa74faed4563f0e6e08a94ec7d1b2fd3e">getName</a> () const noexcept=0</td></tr>
-<tr class="memdesc:aa74faed4563f0e6e08a94ec7d1b2fd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the command (used to trigger it in the CLI). Example: <code>"create"</code>, <code>"build"</code>, <code>"help"</code>. <br /></td></tr>
+<tr class="memdesc:aa74faed4563f0e6e08a94ec7d1b2fd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique name of the command (used in CLI dispatch). <br /></td></tr>
 <tr class="separator:aa74faed4563f0e6e08a94ec7d1b2fd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac625e9c7ad018f5376b0245af5b385dd"><td class="memItemLeft" align="right" valign="top"><a id="ac625e9c7ad018f5376b0245af5b385dd"></a>
-virtual std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#ac625e9c7ad018f5376b0245af5b385dd">getDescription</a> () const noexcept=0</td></tr>
-<tr class="memdesc:ac625e9c7ad018f5376b0245af5b385dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a short human-readable description of the command. Example: <code>"Creates a new project structure"</code>. <br /></td></tr>
-<tr class="separator:ac625e9c7ad018f5376b0245af5b385dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8097c63a9f565045b494113cfffa113a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a8097c63a9f565045b494113cfffa113a">execute</a> (const std::vector&lt; std::string_view &gt; &amp;args)=0</td></tr>
-<tr class="memdesc:a8097c63a9f565045b494113cfffa113a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the command with given CLI arguments.  <a href="classCommand.html#a8097c63a9f565045b494113cfffa113a">More...</a><br /></td></tr>
+<tr class="memitem:a0d5301b1c709f71f152922ae58b2f275"><td class="memItemLeft" align="right" valign="top"><a id="a0d5301b1c709f71f152922ae58b2f275"></a>
+virtual std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a0d5301b1c709f71f152922ae58b2f275">getShortDescription</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a0d5301b1c709f71f152922ae58b2f275"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a one-line summary of what this command does. <br /></td></tr>
+<tr class="separator:a0d5301b1c709f71f152922ae58b2f275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d2cfbe9d479eec9bdbfc4a44f6dcb2"><td class="memItemLeft" align="right" valign="top"><a id="a12d2cfbe9d479eec9bdbfc4a44f6dcb2"></a>
+virtual std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a12d2cfbe9d479eec9bdbfc4a44f6dcb2">getDetailedDescription</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a12d2cfbe9d479eec9bdbfc4a44f6dcb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns detailed help text (usage, flags, examples...). <br /></td></tr>
+<tr class="separator:a12d2cfbe9d479eec9bdbfc4a44f6dcb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8097c63a9f565045b494113cfffa113a"><td class="memItemLeft" align="right" valign="top"><a id="a8097c63a9f565045b494113cfffa113a"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a8097c63a9f565045b494113cfffa113a">execute</a> (const std::vector&lt; std::string_view &gt; &amp;args)=0</td></tr>
+<tr class="memdesc:a8097c63a9f565045b494113cfffa113a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the command logic with given arguments. <br /></td></tr>
 <tr class="separator:a8097c63a9f565045b494113cfffa113a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for all Vextra CLI commands. </p>
-<p>This class defines the unified interface for every command that the Vextra CLI tool can execute (e.g. <code>create</code>, <code>build</code>, <code>help</code>).</p>
+<p>Each subclass represents a single CLI command (e.g. <code>create</code>, <code>help</code>, <code>build</code>).</p>
 <h2><a class="anchor" id="autotoc_md0"></a>
-Design goals</h2>
+Design overview</h2>
 <ul>
-<li>Avoid string copies by using <code>std::string_view</code> for lightweight command identifiers.</li>
-<li>Provide a consistent, extensible command interface.</li>
-<li>Enable dynamic command registration and dispatching via <code>CommandManager</code>.</li>
+<li>Implements the <b><a class="el" href="classCommand.html" title="Abstract base class for all Vextra CLI commands.">Command</a> Pattern</b>, allowing dynamic registration and execution.</li>
+<li>Uses <code>std::string_view</code> for lightweight command identifiers and descriptions.</li>
+<li>Supports both short and detailed help text.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md1"></a>
-Pattern</h2>
-<p>Implements the <b><a class="el" href="classCommand.html" title="Abstract base class for all Vextra CLI commands.">Command</a> Pattern</b>, where each subclass encapsulates a specific operation and can be executed interchangeably. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8097c63a9f565045b494113cfffa113a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8097c63a9f565045b494113cfffa113a">&#9670;&nbsp;</a></span>execute()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Command::execute </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::string_view &gt; &amp;&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Executes the command with given CLI arguments. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td>Command-line arguments excluding the binary name and command itself. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="classvextra_1_1CreateCommand.html#a6c0cb0f42d484ae9bf4db49717c47492">vextra::CreateCommand</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+Usage example</h2>
+<div class="fragment"><div class="line"><span class="keyword">class </span>CreateCommand : <span class="keyword">public</span> <a class="code" href="classCommand.html">Command</a> {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    std::string_view <a class="code" href="classCommand.html#aa74faed4563f0e6e08a94ec7d1b2fd3e">getName</a>() const noexcept<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;create&quot;</span>; }</div>
+<div class="line">    std::string_view <a class="code" href="classCommand.html#a0d5301b1c709f71f152922ae58b2f275">getShortDescription</a>() const noexcept<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;Create a new project structure.&quot;</span>; }</div>
+<div class="line">    std::string_view <a class="code" href="classCommand.html#a12d2cfbe9d479eec9bdbfc4a44f6dcb2">getDetailedDescription</a>() const noexcept<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;Usage:\n  vextra create &lt;ProjectName&gt; ...&quot;</span>; }</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classCommand.html#a8097c63a9f565045b494113cfffa113a">execute</a>(<span class="keyword">const</span> std::vector&lt;std::string_view&gt;&amp; args)<span class="keyword"> override </span>{ ... }</div>
+<div class="line">};</div>
+<div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdoc">Abstract base class for all Vextra CLI commands.</div><div class="ttdef"><b>Definition:</b> Command.hpp:27</div></div>
+<div class="ttc" id="aclassCommand_html_a0d5301b1c709f71f152922ae58b2f275"><div class="ttname"><a href="classCommand.html#a0d5301b1c709f71f152922ae58b2f275">Command::getShortDescription</a></div><div class="ttdeci">virtual std::string_view getShortDescription() const noexcept=0</div><div class="ttdoc">Returns a one-line summary of what this command does.</div></div>
+<div class="ttc" id="aclassCommand_html_a12d2cfbe9d479eec9bdbfc4a44f6dcb2"><div class="ttname"><a href="classCommand.html#a12d2cfbe9d479eec9bdbfc4a44f6dcb2">Command::getDetailedDescription</a></div><div class="ttdeci">virtual std::string_view getDetailedDescription() const noexcept=0</div><div class="ttdoc">Returns detailed help text (usage, flags, examples...).</div></div>
+<div class="ttc" id="aclassCommand_html_a8097c63a9f565045b494113cfffa113a"><div class="ttname"><a href="classCommand.html#a8097c63a9f565045b494113cfffa113a">Command::execute</a></div><div class="ttdeci">virtual void execute(const std::vector&lt; std::string_view &gt; &amp;args)=0</div><div class="ttdoc">Executes the command logic with given arguments.</div></div>
+<div class="ttc" id="aclassCommand_html_aa74faed4563f0e6e08a94ec7d1b2fd3e"><div class="ttname"><a href="classCommand.html#aa74faed4563f0e6e08a94ec7d1b2fd3e">Command::getName</a></div><div class="ttdeci">virtual std::string_view getName() const noexcept=0</div><div class="ttdoc">Returns the unique name of the command (used in CLI dispatch).</div></div>
+</div><!-- fragment --> </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/include/command/<a class="el" href="Command_8hpp_source.html">Command.hpp</a></li>
 </ul>
 </div><!-- contents -->

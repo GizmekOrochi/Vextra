@@ -1,22 +1,23 @@
 #include "../include/CommandManager.hpp"
 #include <iostream>
-
-namespace vextra {
+#include <iomanip> 
+using namespace vextra;
 
 void CommandManager::registerCommand(std::unique_ptr<Command> command) {
-    std::string_view name = command->getName();
+    std::string name(command->getName());
     commands.emplace(name, std::move(command));
 }
 
 void CommandManager::execute(const std::vector<std::string_view>& args) {
     if (args.empty()) {
-        std::cerr << ICON_ERROR << " No command provided.\n";
+        std::cerr << ICON_WARNING << " No command provided.\n";
         listCommands();
+        std::cout << "\n💡 Tip: Use `" << APP_NAME << " help <command>` for more info.\n";
         return;
     }
 
     std::string_view commandName = args[0];
-    auto it = commands.find(commandName);
+    auto it = commands.find(std::string(commandName));
 
     if (it == commands.end()) {
         std::cerr << ICON_ERROR << " Unknown command: " << commandName << "\n";
@@ -24,16 +25,15 @@ void CommandManager::execute(const std::vector<std::string_view>& args) {
         return;
     }
 
-    // Slice args to exclude the command name itself
+    // Execute command with subarguments
     std::vector<std::string_view> subArgs(args.begin() + 1, args.end());
     it->second->execute(subArgs);
 }
 
 void CommandManager::listCommands() const {
-    std::cout << "📚 Available commands:\n";
+    std::cout << "📚 Available commands:\n\n";
     for (const auto& [name, cmd] : commands) {
-        std::cout << "  🔹 " << name << " — " << cmd->getDescription() << "\n";
+        std::cout << "  🔹 " << std::left << std::setw(10) << name
+                  << " — " << cmd->getShortDescription() << "\n";
     }
 }
-
-} // namespace vextra

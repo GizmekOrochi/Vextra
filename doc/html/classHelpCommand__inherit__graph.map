@@ -1,0 +1,4 @@
+<map id="HelpCommand" name="HelpCommand">
+<area shape="rect" id="node1" title="Implements the vextra help command." alt="" coords="5,80,124,107"/>
+<area shape="rect" id="node2" href="$classCommand.html" title="Abstract base class for all Vextra CLI commands." alt="" coords="20,5,109,32"/>
+</map>

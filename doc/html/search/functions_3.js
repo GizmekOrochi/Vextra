@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['registercommand_33',['registerCommand',['../classvextra_1_1CommandManager.html#ac903bafc91c8261d5dcdfa8b37db0526',1,'vextra::CommandManager']]]
+  ['listcommands_40',['listCommands',['../classCommandManager.html#af376ecb8936d28ef8d1bad36b38ffe5b',1,'CommandManager']]]
 ];

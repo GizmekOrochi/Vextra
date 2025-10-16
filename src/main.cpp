@@ -1,20 +1,16 @@
-#include "../include/CommandManager.hpp"
-#include "../include/command/CreateCommand.hpp"
-#include <iostream>
-
-using namespace vextra;
+#include "CommandManager.hpp"
+#include "command/CreateCommand.hpp"
+#include "command/HelpCommand.hpp"
 
 int main(int argc, char* argv[]) {
+    using namespace vextra;
+
     CommandManager manager;
     manager.registerCommand(std::make_unique<CreateCommand>());
-
-    if (argc < 2) {
-        std::cerr << ICON_WARNING << " No command provided.\n";
-        manager.listCommands();
-        return 1;
-    }
+    manager.registerCommand(std::make_unique<HelpCommand>(manager));
 
     std::vector<std::string_view> args(argv + 1, argv + argc);
     manager.execute(args);
+
     return 0;
 }
