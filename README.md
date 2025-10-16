@@ -1,9 +1,8 @@
+# ⚙️ The Simple Project Generator for Developers
+
 <div align="center">
   <img src="assets/VEXTRA_Logo.png" alt="Vextra Logo" width="300"/>
 </div>
-
-# ⚙️ Vextra — The Simple Project Generator for Developers
-
 **Vextra** is a lightweight, modular command-line tool written in **C++20**  
 that lets you create structured C, C++, and Java projects instantly —  
 complete with directories, Makefiles, and entry points.
