@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/Vextra_Logo.png" alt="Vextra Logo" width="300"/>
+  <img src="assets/VEXTRA_Logo.png" alt="Vextra Logo" width="300"/>
 </div>
 
 # ⚙️ Vextra — The Simple Project Generator for Developers
