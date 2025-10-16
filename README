@@ -2,12 +2,10 @@
   <img src="assets/VEXTRA_Logo.png" alt="Vextra Logo" width="300"/>
 </p>
 
-
 # ⚙️ Vextra — The Simple Project Generator for Developers
 
 **Vextra** is a lightweight, modular command-line tool written in **C++20**  
-that lets y
-ou create structured C, C++, and Java projects instantly —  
+that lets you create structured C, C++, and Java projects instantly —  
 complete with directories, Makefiles, and entry points.
 
 > 🧠 Think of it as your minimalist, no-dependency alternative to `cmake init` or `cargo new`.
@@ -16,14 +14,7 @@ complete with directories, Makefiles, and entry points.
 
 ## 🚀 Quick Start
 
-- Install the Vextra 
-- create a projet : vextra create 'name' -java / -c / -c++ or without flag 
-- to get help : vextra help
-
-### 🔧 Installation
-
-Clone the repository:
-```bash
-git clone https://github.com/YourUserName/vextra.git
-cd vextra
-./install.sh
+- Install Vextra  
+- Create a project:  
+  ```bash
+  vextra create 'name' -java / -c / -c++  
